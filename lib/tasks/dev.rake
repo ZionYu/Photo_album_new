@@ -15,7 +15,7 @@ namespace :dev do
         age: data["age"],
         region: data["region"],
         phone: data["phone"],
-        avatar: data["avatar"]
+        avatar: data["photo"]
         )
       puts "created user #{user.name}"
     end
