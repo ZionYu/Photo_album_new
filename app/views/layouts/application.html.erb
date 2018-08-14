@@ -23,6 +23,7 @@
              <%= link_to "我的家庭相簿", root_path, class: "navbar-brand" %>
            </div>
 
+
            <!-- Collect the nav links, forms, and other content for toggling -->
            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
@@ -41,7 +42,11 @@
            </div>
 
          </div><!-- /.container-fluid -->
+         
        </nav>
+       <% if current_user %>
+         <p class="pull-right">你的API Token: <code><%= current_user.authentication_token %></code></p> 
+       <% end %>
 
        <% if flash[:notice] %>
          <div class="alert alert-success" role="alert"><%= notice %></div>
@@ -49,5 +54,6 @@
          <div class="alert alert-danger" role="alert"><%= alert %></div>
        <% end %>
     <%= yield %>
+    
   </body>
 </html>
